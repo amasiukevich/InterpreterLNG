@@ -4,7 +4,7 @@ from src.utils.position import Position
 
 if __name__ == "__main__":
 
-    scanner = Scanner()
     file_source = FileSource()
+    scanner = Scanner(file_source)
     position = Position()
 
