@@ -4,11 +4,32 @@ from .position import Position
 
 class Token:
 
-    def __init__(self, token_type: TokenType, position: Position, value: str):
+    MAX_IDENTIFIER_LEN = 120
 
-        self.type = token_type
-        self.position = position
-        self.value = value
+    def __init__(self, token_type: TokenType, position=None, value=None):
+
+        self._token_type = token_type
+        self._position = position
+        self._value = value
+
+
+    def get_token_type(self):
+        return self._token_type
+
+
+    def get_position(self):
+        return self._position
+
+
+    # TODO: get string value
+    # TODO: get float value
+
+
+    def __eq__(self, other):
+        if not isinstance(other, Token):
+            return False
+        else:
+            return self.get_token_type() == other.get_token_type() and self.get_position() == other.get_position()
 
     # for testing purposes
     def __repr__(self):
