@@ -1,5 +1,8 @@
 class BaseSource:
 
+    EOF = -1
+
+
     def peek(self):
         pass
 

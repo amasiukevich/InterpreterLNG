@@ -1,0 +1,2 @@
+class SourceException(Exception):
+    pass
