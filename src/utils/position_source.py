@@ -1,7 +1,7 @@
 from ..data_source.base_source import BaseSource
 from .position import Position
 
-class PositionSource:
+class PositionSource(BaseSource):
 
 
     def __init__(self, source: BaseSource, position: Position):
@@ -19,16 +19,16 @@ class PositionSource:
         if character == "\n":
             self._position.advance_line()
         else:
-            self.position.advance_line()
+            self._position.advance_column()
 
 
     def get_line(self):
-        return self.position.get_line()
+        return self._position.get_line()
 
 
     def get_column(self):
-        return self.position.get_column()
+        return self._position.get_column()
 
 
     def get_position(self):
-        return self.position.clone()
+        return self._position.clone()

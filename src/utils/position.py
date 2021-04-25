@@ -12,10 +12,10 @@ class Position:
 
     def advance_line(self):
         self._line += 1
-        self.column = 0
+        self._column = 0
 
     def advance_column(self):
-        self.column += 1
+        self._column += 1
 
     def __repr__(self):
         return f"line: {self.get_line()}, column: {self.get_column()}"

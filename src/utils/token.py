@@ -4,7 +4,9 @@ from .position import Position
 
 class Token:
 
+    SPECIAL_CHARS = [';', '"', '\'', '-', '.', ',', '/', '\\', '_', '$', ' ']
     MAX_IDENTIFIER_LEN = 120
+    MAX_NUMBER = 2**32
 
     def __init__(self, token_type: TokenType, position=None, value=None):
 
@@ -16,11 +18,12 @@ class Token:
     def get_token_type(self):
         return self._token_type
 
-
     def get_position(self):
         return self._position
 
 
+    def get_value(self):
+        return self._value
     # TODO: get string value
     # TODO: get float value
 
@@ -33,4 +36,4 @@ class Token:
 
     # for testing purposes
     def __repr__(self):
-        return f"TOKEN(type: {self.token_type}, position: {self.position})"
+        return f"TOKEN(type: {self._token_type}, position: {self._position}, value: '{self._value}')"

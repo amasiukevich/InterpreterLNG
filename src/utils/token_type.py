@@ -14,7 +14,7 @@ class TokenType(Enum):
     # Relational
     ASSIGN = auto(),            # =
     EQUAL = auto(),             # ==
-    NOT_EQUAL = auto(),         # !
+    NOT_EQUAL = auto(),         # !=
     GREATER = auto(),           # >
     LESS = auto(),              # <
     GREATER_EQUAL = auto(),     # >=
@@ -38,6 +38,8 @@ class TokenType(Enum):
     THIS = auto(),              # this
     REFLECT = auto(),           # reflect
     BY_REF = auto(),            # by_ref
+    TRUE = auto(),              # true
+    FALSE = auto()              # false
 
     # Symbols
     OPEN_PARENTHESIS = auto(),      # (
@@ -52,11 +54,7 @@ class TokenType(Enum):
     # Literals
     NUMERIC_LITERAL = auto(),       # 123
     STRING_LITERAL = auto(),        # abcde
-    BOOL_LITERAL = auto(),          # true, false
+    BOOL_LITERAL = auto(),                  # true, false
 
     UNKNOWN = auto(),
     EOF = auto()
-
-
-    IDENTIFIER =    auto()      #
-    TYPE =          auto()      # "int", "string", "bool"
