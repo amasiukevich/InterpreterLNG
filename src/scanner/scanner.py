@@ -151,7 +151,7 @@ class Scanner:
         if not self._current_char.isdigit():
             return False
 
-        value = self.construct_integer();
+        value = self.construct_integer()
 
         # constructing fraction
         frac = 0
@@ -297,9 +297,11 @@ class Scanner:
 
 
     def is_valid_part(self):
-        return self._current_char.isalnum() or self._current_char == "_"
 
-
+        try:
+            return self._current_char.isalnum() or self._current_char == "_"
+        except Exception as e:
+            print(e)
 
     def greetings(self):
         return "Just initialized a scanner class"

@@ -4,6 +4,8 @@ from src.scanner.scanner import Scanner
 from src.utils.position import Position
 from src.utils.position_source import PositionSource
 
+from src.utils.accumulator import accumulate_tokens
+
 import time
 
 if __name__ == "__main__":
@@ -17,18 +19,7 @@ if __name__ == "__main__":
     file_source1 = 1
 
     scanner = Scanner(pos_file_source)
-    token = scanner.get_token()
 
-    while True:
-        print(token, "\n")
+    tokens = accumulate_tokens(scanner)
 
-        if token.get_token_type() == TokenType.EOF:
-            print("Hi there")
-            break
-
-        try:
-
-            token = scanner.get_token()
-        except Exception as e:
-            print(e)
-            breakpoint()
+    breakpoint()
